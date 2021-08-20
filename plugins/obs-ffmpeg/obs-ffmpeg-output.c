@@ -609,7 +609,7 @@ bool ffmpeg_data_init(struct ffmpeg_data *data, struct ffmpeg_cfg *config)
 	if (!open_output_file(data))
 		goto fail;
 
-	av_dump_format(data->output, 0, NULL, 1);
+	av_dump_format(data->output, 0, data->config.url, 1);
 
 	data->initialized = true;
 	return true;
